@@ -1599,7 +1599,7 @@ enum {
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    return enablePanOverUIControls_;
+    return enablePanOverUIControls_ && ![otherGestureRecognizer.view isKindOfClass:[UIScrollView class]];
 }
 
 @end
